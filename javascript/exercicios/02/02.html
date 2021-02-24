@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <!-- definição da estrutura -->
+    Votos do Zé Buduia:
+    <input id="ze_buduia_votos" placeholder="Zé Buduia"><br><br>
+    Votos da Maria Bigodenha:
+    <input id="maria_bigodenha_votos" placeholder="Maria Bigodenha"><br><br>
+    Votos em branco:
+    <input id="brancos_votos" placeholder="Votos em Branco"><br><br>
+    Votos nulos:
+    <input id="nulos_votos" placeholder="Votos Nulos"><br><br>
+    
+    <button onclick="result()">Resultado da eleição</button><br><br>
+
+    <div id="display" style="background-color: rgb(61, 202, 238); width: 200px; height: 200px;">
+</body>
+</html>
+
+<script>
+    function result() {
+        var buduia = ze_buduia_votos.value;
+        var bigodenha = maria_bigodenha_votos.value;
+        var brancos = brancos_votos
+        // display.innerHTML = `<p>Total de votos: ${}</p><br><p>Zé Dubuia: ${}% (${} votos)</p> <p>Maria Bigodenha: ${}% (${} votos)</p><br> <p>Inválidos: ${}% (${} votos)</p>`;
+    }
+</script>
