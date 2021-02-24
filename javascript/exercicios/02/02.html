@@ -19,15 +19,19 @@
     
     <button onclick="result()">Resultado da eleição</button><br><br>
 
-    <div id="display" style="background-color: rgb(61, 202, 238); width: 200px; height: 200px;">
+    <div id="display" style="background-color: rgb(61, 202, 238); width: 200px; height: 200px; padding: 10px;">
 </body>
 </html>
 
 <script>
+
     function result() {
-        var buduia = ze_buduia_votos.value;
-        var bigodenha = maria_bigodenha_votos.value;
-        var brancos = brancos_votos
-        // display.innerHTML = `<p>Total de votos: ${}</p><br><p>Zé Dubuia: ${}% (${} votos)</p> <p>Maria Bigodenha: ${}% (${} votos)</p><br> <p>Inválidos: ${}% (${} votos)</p>`;
+        var buduia = Number(ze_buduia_votos.value);
+        var bigodenha = Number(maria_bigodenha_votos.value);
+        var brancos = Number(brancos_votos.value);
+        var nulos = Number(nulos_votos.value);
+        var total = buduia + bigodenha + brancos + nulos
+        display.innerHTML = `<h3>Total de votos: ${total}</h3> <p>Zé Buduia: ${buduia * 100 / total}% (${buduia} votos)</p> <p>Maria Bigodenha: ${bigodenha * 100 / total}% (${bigodenha} votos)</p> <p>Inválidos: ${(nulos + brancos) * 100 / total}% (${nulos + brancos} votos)</p>`;
     }
+
 </script>
