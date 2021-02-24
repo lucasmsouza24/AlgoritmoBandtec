@@ -11,11 +11,12 @@
 </head>
 <body>
 
-    <!-- manipulando valores -->
+    <!-- definição dos campos -->
     nome: <input id="input_nome" placeholder="digite o seu nome"> <br><br>
     bairro: <input id="input_bairro" placeholder="digite seu bairro"><br><br>
     idade: <input id="input_idade" placeholder="digite sua idade"><br><br>
 
+    <!-- relacionando botões às funções -->
     <button onclick="relatorio()">Relatório</button>
     <button onclick="relatorio_bonito()">Relatório bonito</button> <br><br>
 
@@ -24,12 +25,14 @@
 
 <script>
     
+    // função referente ao botão do relarório
     function relatorio() {
         alert(`Seu nome é ${input_nome.value}`);
         alert(`Você mora no bairro ${input_bairro.value}`);
         alert(`Sua idade é ${input_idade.value}`);
     }
 
+    // função refernte ao botão do relatório bonito
     function relatorio_bonito() {
         alert(`Seu nome é ${input_nome.value}, você mora no bairro ${input_bairro.value} e a sua idade é ${input_idade.value}`);
     }
