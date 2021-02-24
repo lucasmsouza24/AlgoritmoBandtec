@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <!-- manipulando valores -->
+    nome: <input id="input_nome" placeholder="digite o seu nome"> <br><br>
+    bairro: <input id="input_bairro" placeholder="digite seu bairro"><br><br>
+    idade: <input id="input_idade" placeholder="digite sua idade"><br><br>
+
+    <button onclick="relatorio()">Relatório</button>
+    <button onclick="relatorio_bonito()">Relatório bonito</button> <br><br>
+
+</body>
+</html>
+
+<script>
+    
+    function relatorio() {
+        alert(`Seu nome é ${input_nome.value}`);
+        alert(`Você mora no bairro ${input_bairro.value}`);
+        alert(`Sua idade é ${input_idade.value}`);
+    }
+
+    function relatorio_bonito() {
+        alert(`Seu nome é ${input_nome.value}, você mora no bairro ${input_bairro.value} e a sua idade é ${input_idade.value}`);
+    }
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulação de valores</title>
+</head>
+<body>
+    primeiro número: <input id="primeiro_valor"> <br><br>
+    segundo número: <input id="segundo_valor"> <br><br>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="potencia()">Potencia</button>
+</body>
+</html>
+
+<script>
+
+    function multiplicar() {
+        var n1 = Number(primeiro_valor.value);
+        var n2 = Number(segundo_valor.value);
+        alert(`${n1} * ${n2} = ${n1 * n2}`);
+    }
+
+    function dividir() {
+        var n1 = Number(primeiro_valor.value);
+        var n2 = Number(segundo_valor.value);
+        alert(`${n1} / ${n2} = ${n1 / n2}`);
+    }
+
+    function somar() {
+        var n1 = Number(primeiro_valor.value);
+        var n2 = Number(segundo_valor.value);
+        alert(`${n1} + ${n2} = ${n1 + n2}`);
+    }
+
+    function subtrair() {
+        var n1 = Number(primeiro_valor.value);
+        var n2 = Number(segundo_valor.value);
+        alert(`${n1} - ${n2} = ${n1 - n2}`);
+    }
+
+    function potencia() {
+        var n1 = Number(primeiro_valor.value);
+        var n2 = Number(segundo_valor.value);
+        alert(`${n1} ^ ${n2} = ${n1 ** n2}`)    
+    }
+
+</script>
