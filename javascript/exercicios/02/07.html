@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 (Desafio)</title>
+</head>
+<body>
+    <!-- estrutura dos inputs -->
+    Nome do aluno: <br>
+    <input id="input_nome" placeholder="Nome"> <br><br>
+    Quantidade de aulas totais do curso: <br>
+    <input id="input_aulas_totais" placeholder="Aulas totais"><br><br>
+    Quantidade de aulas que o aluno faltou: <br>
+    <input id="input_quantidade_faltas" placeholder="Faltas"> <br><br>
+
+    <!-- botão de exibição de resultados -->
+    <button onclick="calc_freq()">Calcular Frequência</button> <br><br>
+
+    <!-- exibição de resultados -->
+    <div id="display_title"></div> <br>
+    <div id="display_graph" style="background-color: rgb(122, 0, 0); width: 0px; height: 20px;"></div>
+    
+</body>
+</html>
+
+<script>
+    // exibição de resultados
+    function calc_freq() {
+        // resgatando os valores dos inputs
+        var nome = input_nome.value;
+        var aulas_totais = Number(input_aulas_totais.value);
+        var qtd_faltas = Number(input_quantidade_faltas.value);
+
+        // calculo das faltas em porcentagem e frequencia
+        var faltas_pcent = qtd_faltas * 100 / aulas_totais;
+        var freq = 100 - faltas_pcent
+
+        // Exibindo resultado textual
+        display_title.innerHTML = ` <h4 style="color: blue">Olá, ${nome}! Sua frequência foi de <span style="color: green;">${freq}%</span></h4> `;
+        display_graph.style.width = freq + "%";
+
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 - PIZZA!</title>
+</head>
+<body>
+    <!-- definição de inputs -->
+    Sabor da Pizza: 
+    <input id="input_sabor" placeholder="sabor"> <br><br>
+    Preço da Pizza: 
+    <input id="input_preco" placeholder="preço"> <br><br>
+    Quantidade de amigos que vão comer: <br>
+    <input id="input_qtd_amgs" placeholder="Quantidade de amigos"> <br><br>
+
+    <!-- botão que mostra resultado -->
+    <button onclick="show_price()">Ver valor por amigo!</button> <br><br>
+
+    <!-- caixa de exibição do resultado -->
+    <div id="display" style="background-color: rgb(241, 181, 111); width: 300px; height: 200px;"></div>
+</body>
+</html>
+
+<script>
+
+    // mostrando resultados
+    function show_price() {
+        var sabor = input_sabor.value;
+        var price = Number(input_preco.value);
+        var qtd_amgs = Number(input_qtd_amgs.value);
+        var total_price = price * 1.1;
+        var price_amg = total_price / qtd_amgs;
+        display.innerHTML = `<h3>Cada amigo vai colaborar com R$ ${price_amg} para a pizza de ${sabor}.</h3>`;
+    }
+
+</script>
