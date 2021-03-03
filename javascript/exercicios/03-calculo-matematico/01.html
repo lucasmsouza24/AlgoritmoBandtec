@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+</head>
+<body>
+    Quantidade de metros de cano para desentupir <br>
+    <input id="input_metros_de_cano" placeholder="metros de cano"> <br><br>
+    <button onclick="calc_orc()">Calcular orçamento</button> <br><br>
+    <div id="display" style="width: 300px; height: 200px; background-color: rgb(231, 144, 144);"></div>
+</body>
+</html>
+
+<script>
+    function calc_orc() {
+        var xcano = Number(input_metros_de_cano.value);
+        var nicanor = 10 * xcano + 50;
+        var rotirute = 9.8 * xcano + 600;
+        display.innerHTML = `<h4>Para desentupir ${xcano} metros de cano</h4>O serviço pela Nicanor sai por R$ ${nicanor} <br> O serviço pela Rotirute sai por R$ ${rotirute} <br> A diferença de valores é de R$ ${nicanor - rotirute}`;
+        input_metros_de_cano.value = '';
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    Quantidade de lâmpadas necessárias: <br>
+    <input id="input_lampadas_necessarias" placeholder="quantidade de lâmpadas"> <br><br>
+    Valor médio da conta de luz: <br>
+    <input id="input_media_conta_luz" placeholder="média da conta de luz"> <br><br>
+    <button onclick="calc_invest()">Calcular dados de investimento</button> <br><br>
+    <div id="display" style="width: 300px; height: 200px; background-color: rgb(231, 144, 144);"></div>
+</body>
+</body>
+</html>
+
+<script>
+    function calc_invest() {
+        var qtdLamp = Number(input_lampadas_necessarias.value);
+        var mediaConta = Number(input_media_conta_luz.value);
+        var investimento = qtdLamp * 20;
+        var economia = mediaConta * 0.1;
+        var retornoMeses = investimento / economia;
+        display.innerHTML = `O seu investimento em lâmpadas será de R$ ${investimento} <br> A sua economia na conta de luz será de R$ ${economia} <br> Portanto, em ${retornoMeses} meses, seu investimento será retornado`;
+    }
+</script>
