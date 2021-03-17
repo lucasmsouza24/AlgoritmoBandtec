@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de decisão</title>
+</head>
+<body>
+    Digite a quantidade de maçãs: <input id="input_qtd_macas"> 
+    <br>
+    <button onclick="finalizar_compra()">Finalizar compra</button>
+</body>
+</html>
+
+<script>
+
+    function finalizar_compra() {
+        var quantidade_macas = Number(input_qtd_macas.value);
+        var custo_unidade = 0.75;
+
+        // estrutura de decisão
+        if(quantidade_macas >= 10) {
+            // bloco do código que só será executado se a condição for true
+            custo_unidade = 0.68;
+        }
+
+        var total_compra = quantidade_macas * custo_unidade;
+        alert(`Valor total da compra: ${total_compra}`);
+
+    }
+
+</script>

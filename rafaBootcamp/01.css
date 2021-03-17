@@ -1,0 +1,30 @@
+#div_main {
+    height: 350px;
+    width: 400px;
+    background: blueviolet;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+#bar1, #bar2, #bar3, #bar4 {
+    width: 25%;
+    margin: 1px;
+    background-color: rgb(238, 94, 58);
+}
+
+#bar1 {
+    height: 10%;
+}
+
+#bar2 {
+    height: 23%;
+}
+
+#bar3 {
+    height: 71%;
+}
+
+#bar4 {
+    height: 43%;
+}

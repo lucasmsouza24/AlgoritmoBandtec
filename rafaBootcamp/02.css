@@ -1,0 +1,16 @@
+#main {
+    width: 300px;
+    height: 200px;
+    background-color: blueviolet;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
