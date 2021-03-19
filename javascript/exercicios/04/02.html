@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <!-- estrutura de inputs -->
+    Quantidade de infrações cometidas: <br>
+    <input id="input_qtd_infracoes" placeholder="infrações"> <br><br>
+
+    Valor do carro: <br>
+    <input id="input_valor_carro" placeholder="Valor do carro"> <br><br>
+
+    <!-- botão que chama função -->
+    <button onclick="calc_seguro()">Calcular Seguro</button>
+
+    <!-- exibição de resultado -->
+    <p id="show_result"></p>
+</body>
+</html>
+
+<script>
+
+    function calc_seguro() {
+        // resgatando valores
+        var qtd_infracoes = Number(input_qtd_infracoes.value);
+        var valor_carro = Number(input_valor_carro.value);
+
+        // o valor do seguro é igual à 1,5% do valor do carro
+        var seguro = 0.015 * valor_carro;
+
+        // se o motorista teve menos de 3 infrações, tem um desconto de 10% no valor do seguro
+        if(qtd_infracoes < 3) {
+            seguro *= 0.9
+        }
+
+        // exibindo resultado
+        show_result.innerHTML = `Seu seguro custará: R$ ${seguro}`;
+    }
+
+</script>

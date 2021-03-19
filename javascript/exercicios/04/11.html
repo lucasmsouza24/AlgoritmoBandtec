@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h1>Banco Itado(ri)</h1>
+    <h2>Cheque especial</h2>
+
+    <!-- inputs -->
+    Saldo da conta: <br>
+    <input id="in_saldo_conta"> <br><br>
+
+    Valor do débito: <br>
+    <input id="in_debito"> <br><br>
+
+    <button onclick="analisar_conta()">Analisar Conta</button>
+
+    <!-- exibindo resultado -->
+    <div id="show_result"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar_conta() {
+        // armazenando valores dos inputs
+        var saldo_conta = Number(in_saldo_conta.value);
+        var debito = Number(in_debito.value);
+
+        // calculando saldo atual
+        var saldo_atual = saldo_conta - debito;
+        
+        // exibindo resultado
+        show_result.innerHTML = `<p>O saldo atual da conta corrente é R$ ${saldo_atual}</p>`;
+        show_result.style.color = "black";
+        show_result.style.fontWeight = "normal";
+
+        // alterando cores caso saldo seja negativo
+        if (saldo_atual < 0) {
+            show_result.style.color = "red";
+            show_result.style.fontWeight = "bold";
+        }
+    }
+
+</script>

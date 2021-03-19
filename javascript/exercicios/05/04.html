@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <h1>Dividindo uma Pizza</h1>
+
+    <!-- inputs -->
+    Valor da pizza: <br>
+    <input id="input_valor_pizza"> <br><br>
+
+    Quantidade de amigos: <br>
+    <input id="input_qtd_amigos"> <br><br>
+
+    Limite de preço por amigo: <br>
+    <input id="input_valor_limite"> <br><br>
+
+    <button onclick="rola_pizza()">Rola pizza?</button>
+
+    <div id="show_result"></div>
+</body>
+</html>
+
+<script>
+
+    function rola_pizza() {
+        // regatando valores dos inputs
+        var valor_pizza = Number(input_valor_pizza.value);
+        var qtd_amigos = Number(input_qtd_amigos.value);
+        var valor_limite = Number(input_valor_limite.value);
+
+        // calculando valor que cada amigo vai pagar
+        var valor_por_pessoa = valor_pizza / qtd_amigos;
+
+        // exibindo resultado
+        show_result.innerHTML = `<p>Cada amigo vai pagar R$ ${valor_por_pessoa.toFixed(2)} pela pizza.</p>`;
+
+        // exibindo msg adicional caso o valor por pessoa seja maior que o valor limite
+        if (valor_por_pessoa > valor_limite) {
+            show_result.innerHTML += "<p>Deu ruim! Pìzza muito cara!</p>";
+        } else {
+            show_result.innerHTML += "<p>Uhu! Vamos pedir a pizza!</p>";
+        }
+
+    }
+
+</script>
