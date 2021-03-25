@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    Peso: 
+    <input id="in_peso" placeholder="kg"> <br><br>
+    Altura:
+    <input id="in_altura" placeholder="m"> <br><br>
+
+    <button onclick="calc_imc()">Calcula IMC</button> <br><br>
+
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+    function calc_imc() {
+        // armazenando valores dos inputs
+        var peso = Number(in_peso.value);
+        var altura = Number(in_altura.value);
+
+        // calculando imc e armazenando dentro da variável peso
+        // (isso não faria sentido se não fosse a exigência do enunciado)
+        peso /= altura ** 2;
+
+        // exibindo resultado
+        display.innerHTML = `IMC: ${peso.toFixed(1)}`;
+    }
+    
+</script>

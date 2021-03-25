@@ -8,16 +8,29 @@
 </head>
 <body>
     Temperatura do ambiente: <br>
-    <input id="in_temperatura"> <br><br>
+    <input id="in_temperatura" placeholder="°C"> <br><br>
 
     <button onclick="verificar_clima()">Verificar Clima</button>
+
+    <div id="display"></div>
+    <img src="" id="tag_img" style="width: 200px;">
 </body>
 </html>
 
 <script>
 
     function verificar_clima() {
-        
+        // armazenando valor do input
+        var temperatura = Number(in_temperatura.value);
+
+        // verificando se temperatura é menor que 10
+        if(temperatura < 10) {
+            display.innerHTML = "Apropriada p/ conservar alimento";
+            tag_img.src = "06-maca-boa.jpg";
+        } else {
+            display.innerHTML = "Inapropriada p/ conservar alimento";
+            tag_img.src = "06-maca-estragada.jpg";
+        }
     }
 
 </script>

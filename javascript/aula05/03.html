@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display_num">0</div>
+    <button onclick="btn_increment()">incrementar</button>
+</body>
+</html>
+
+<script>
+    var num = Number(display_num.innerHTML);
+    function btn_increment() {
+        if (num == 12) {
+            alert("O usuário não vai gostar do próximo número!");
+        }
+        display_num.innerHTML = ++num;
+    }
+
+</script>

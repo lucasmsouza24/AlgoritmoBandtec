@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Circuferência</h1>
+    Raio: 
+    <input id="in_raio" placeholder="m"> <br><br>
+    
+    <button onclick="area()">Calcular Área</button> <br><br>
+
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+    function area() {
+        // armazenando valor do input
+        var raio = Number(in_raio.value);
+
+        // raio ao quadrado
+        raio **= 2;
+        
+        // raio ao quadrado * pi (area)
+        raio *= 3.14;
+
+        // exibindo resultado
+        display.innerHTML = `area: ${raio.toFixed(2)} m`
+    }
+
+</script>
