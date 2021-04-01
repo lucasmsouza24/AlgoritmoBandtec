@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+    <style>
+
+        #container {
+            width: 80%;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h1>Bilhetes de Metrô</h1>
+
+        <img src="./img/10.jpg" alt="tabela de preços de bilhetes do metrô"> <br><br>
+
+        <button onclick="passagens_8()">8 Passagens</button> 
+        <button onclick="passagens_20()">20 Passagens</button> 
+        <button onclick="passagens_50()">50 Passagens</button> <br><br>
+
+        <div id="display"></div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function passagens_8() {
+        var qtd_passagens = 8;
+        var tarifa_cheia = 4.4
+        var val = (1 - (32.45 / 35.2)) * 100;
+
+        console.log(val);
+
+        // exibindo resultados
+        display.innerHTML = `Ao comprar X passagens, você pagou Y% a menos. É como se tivesse ganhado Z passagens de bônus`;
+    }
+
+</script>

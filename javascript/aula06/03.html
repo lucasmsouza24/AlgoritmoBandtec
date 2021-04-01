@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="filmes_dc">
+        <option value="invalido">Selecione um filme</option>
+        <option value="liga_justica">Liga da Justiça</option>
+        <option value="batman_vs_superman">Batman vs Superman</option>
+        <option value="aquaman">Aquaman</option>
+    </select>
+    <input id="dc_nota"> <br><br>
+
+    <select id="filmes_marvel">
+        <option value="invalido">Selecione um filme</option>
+        <option value="dr_strange">Dr. Strange</option>
+        <option value="iron_man_3">Iron Man 3</option>
+        <option value="ant_man">Ant Man</option> 
+    </select>
+    <input id="marvel_nota"> <br><br>
+
+    <br><br>
+    <button onclick="verificar_notas()">Verificar Notas</button>
+</body>
+</html>
+
+<script>
+    function verificar_notas() {
+        // armazenando valores de seleção
+
+        var filme_dc = filmes_dc.value;         // filme dc
+        var filme_marvel = filmes_marvel.value  // filme marvel
+
+        // armazenando notas dos filmes
+        var nota_dc = Number(dc_nota.value);
+        var nota_marvel = Number(marvel_nota.value);
+
+        var percent = (nota_marvel * 100 / nota_dc) - 100 ;
+
+        // exibindo resultado
+        alert(`${filme_dc}: ${nota_dc} \n ${filme_marvel}: ${nota_marvel} \n ${filme_marvel} é ${percent}% melhor que ${filme_dc}`);
+    }
+</script>

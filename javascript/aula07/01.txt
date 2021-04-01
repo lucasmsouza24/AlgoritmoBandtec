@@ -1,0 +1,8 @@
+1. Crie um programa em HTML/JS o qual:
+a) Solicite a nota do aluno;
+b) Ao clicar em "Classificar aluno":
+ b.1) Exiba uma dessas mensagens num alert:
+      "Aluno precisa de muita ajuda", caso a nota for menor que 5;
+      "Aluno na média", caso a nota for entre 5 até 7;
+      "Aluno na acima da média", caso a nota for maior que 7 até 9.5;
+      "Aluno fora da curva", caso a nota for maior que 9.5;

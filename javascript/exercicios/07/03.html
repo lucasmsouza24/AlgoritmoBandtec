@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Para qual time você torce?</h1>
+    <select id="select_time">
+        <option value="time_corinthians">Corinthians</option>
+        <option value="time_palmeiras">Palmeiras</option>
+        <option value="time_santos">Santos</option>
+        <option value="time_sao_paulo">São Paulo</option>
+    </select>
+
+    <button onclick="analisar_time()">Fale sobre esse time</button> <br><br>
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar_time() {
+        // armazenando valor do select
+        var time_selecionado = select_time.value;
+
+        // verificando time selecionado e exibindo mensagem correspondente
+        if (time_selecionado == 'time_corinthians') {
+            display.innerHTML = 'Salve o Corinthians';
+            display.style.backgroundColor = 'black';
+            display.style.color = 'white';
+        } else if (time_selecionado == 'time_palmeiras') {
+            display.innerHTML = 'Salve o alviverde imponente';
+            display.style.backgroundColor = 'green';
+            display.style.color = 'white';
+        } else if (time_selecionado == 'time_santos') {
+            display.innerHTML = 'Agora que dá a bola é o Santos';
+            display.style.backgroundColor = 'white';
+            display.style.color = 'black';
+        } else if (time_selecionado == 'time_sao_paulo') {
+            display.innerHTML = 'Salve o Tricolor paulista';
+            display.style.backgroundColor = 'black';
+            display.style.color = 'red';
+        }
+    }
+
+</script>

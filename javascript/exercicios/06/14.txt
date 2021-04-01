@@ -1,0 +1,10 @@
+14 (desafio). Crie um programa em HTML/JS que simule um jogo de luta simples.
+a) Nada deve aparecer na tela a princípio, a não ser um botão "Iniciar Jogo":
+a.1) Ao clicar nele, aparecem os itens a seguir:
+b) Aparecem as fotos de 2 lutadores (como as dos exemplos abaixo). E, abaixo deles, uma "barra de vida", que ocupa 100% da largura da tela;
+
+c) Abaixo das imagens e barras, deve haver o texto:
+   Golpes sofridos pelo lutador 1: 0
+   Golpes sofridos pelo lutador 2: 0
+
+d) Sempre que for clicada na imagem de um dos lutadores, seu "contador" aumenta em 1 e sua barra reduz em 5% bruto (não relativo). Ex: estava em 90%, vai para 85%. Estava em 75%, vai para 70%;

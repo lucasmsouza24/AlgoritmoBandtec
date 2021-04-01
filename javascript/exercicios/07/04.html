@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>será que você ta goRdo?</h1>
+
+    Quantos pães franceses você come por dia? <br>
+    <input id="in_qtd_paes"> <br><br>
+
+    Quantos pacotes de bolacha recheada recheada você come por dia? <br>
+    <input id="in_qtd_bolachas"> <br><br>
+
+    Quantos copos de achocolatado você bebe por dia? <br>
+    <input id="in_qtd_copos"> <br><br>
+
+    <button onclick="verificar_calorias()">Verificar Calorías</button>
+
+    <div id="display"></div>
+</body>
+</html>
+<script>
+
+    function verificar_calorias() {
+        // armazenando valores dos inputs
+        var qtd_paes = Number(in_qtd_paes.value);
+        var qtd_bolachas = Number(in_qtd_bolachas.value);
+        var qtd_copos = Number(in_qtd_copos.value);
+
+        // calculando calorias individuais
+        var kcal_paes = qtd_paes * 50;
+        var kcal_bolachas = qtd_bolachas * 80;
+        var kcal_copos = qtd_copos * 70;
+
+        // calorias no total
+        var kcal_total = kcal_paes + kcal_bolachas + kcal_copos;
+        
+        // display.innerHTML = `Você está consumindo ${kcal_total} kcal`;
+
+        // resultados possíveis
+        // Parabéns, vai sair em forma da quarentena!", caso as calorias sejam menores do que 200
+        if (kcal_total < 200) {
+            display.innerHTML = "Parabéns, vai sair em forma da quarentena!";
+        }
+        // Cuidado, vai ficar mais "fofinho(a)" após quarentena!
+        else if (kcal_total <= 400 ) {
+            display.innerHTML = 'Cuidado, vai ficar mais "fofinho(a)" após quarentena!';
+        }
+        // Bom, acho que muitos não vão te reconhecer após a quarentena
+        else {
+            display.innerHTML = "Bom, acho que muitos não vão te reconhecer após a quarentena";
+        }
+
+        console.log(kcal_total);
+    }
+
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>primeira atividade</h1>
+    Nota do aluno: <br>
+    <input id="in_nota"> <br><br>
+    <button onclick="classificar_aluno()">Classificar aluno</button> <br><br>
+
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+    function classificar_aluno() {
+        // armazenando valor do input
+        var nota = Number(in_nota.value);
+
+        // condições de classificação
+        if(nota < 0) {
+            display.innerHTML = `Nota ${nota} não é válida!`;
+            display.style.color = 'black';
+        }
+        else if (nota < 5) {
+            display.innerHTML = 'Aluno precisa de muita ajuda';
+            display.style.color = 'red';
+        }
+        else if (nota <= 7) {
+            display.innerHTML = 'Aluno na média';
+            display.style.color = 'orangered';
+        }
+        else if (nota <= 9.5) {
+            // alert('aluno acima da média');
+            display.innerHTML = 'aluno acima da média';
+            display.style.color = 'green';
+        }
+        else if (nota <= 10) {
+            // alert('Aluno fora da curva');
+            display.innerHTML = 'Aluno fora da curva';
+            display.style.color = 'blue';
+        } else {
+            display.innerHTML = `Nota ${nota} não é válida!`;
+            display.style.color = 'black';
+        }
+    }
+
+</script> 
