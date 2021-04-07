@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <select id="select_meses">
+        <option value="mes1">Janeiro</option>
+        <option value="mes2">Fevereiro</option>
+        <option value="mes3">Março</option>
+        <option value="mes4">Abril</option>
+        <option value="mes5">Maio</option>
+        <option value="mes6">Junho</option>
+        <option value="mes7">Julho</option>
+        <option value="mes8">Agosto</option>
+        <option value="mes9">Setembro</option>
+        <option value="mes10">Outubro</option>
+        <option value="mes11">Novembro</option>
+        <option value="mes12">Dezembro</option>
+    </select>
+
+    <button onclick="verificar_estacao()">Verificar Estação</button> <br><br>
+
+    <h1 id="label_estacao"></h1>
+    <img id="img_estacao" style="width: 300px;">
+</body>
+</html>
+
+<script>
+
+    function verificar_estacao() {
+        // armazenando valor do select
+        var mes_escolhido = select_meses.value;
+
+        // verificando estação
+
+        if (mes_escolhido == "mes12" || mes_escolhido == "mes1" || mes_escolhido == "mes2") {
+            // inverno
+            img_estacao.src = "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/06/inverno.jpg";
+            label_estacao.innerHTML = "Inverno";
+        } else if (mes_escolhido == "mes3" || mes_escolhido == "mes4" || mes_escolhido == "mes5") {
+            // primavera
+            img_estacao.src = "https://www.e-dublin.com.br/wp-content/uploads/2018/04/dreamstime_s_80594896-e1522327677497-795x370.jpg";
+            label_estacao.innerHTML = "Primavera";
+        } else if (mes_escolhido == "mes6" || mes_escolhido == "mes7" || mes_escolhido == "mes8") {
+            // verão
+            img_estacao.src = "https://cdn.abcdoabc.com.br/verao_5508634b.jpg";
+            label_estacao.innerHTML = "Verão";
+        } else {
+            // outono
+            img_estacao.src = "https://s3.static.brasilescola.uol.com.br/be/2021/03/outono.jpg";
+            label_estacao.innerHTML = "Outono";
+        }
+    }   
+
+</script>
