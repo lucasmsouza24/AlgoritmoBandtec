@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exrrcício 1</title>
+</head>
+<body>
+    Nome: <br>
+    <input id="in_nome"><br><br>
+
+    vai beber o que? <br>
+    <select id="select_bebida">
+        <option value="0">Nenhuma</option>
+        <option value="0.99">Água</option>
+        <option value="4.5">Refrigerante</option>
+        <option value="6">Cerveja</option>
+    </select> <br><br>
+
+    vai comer o que? <br>
+    <select id="select_comida">
+        <option value="5">Salada</option>
+        <option value="10">Feijoada</option>
+        <option value="15">Bife a cavalo</option>
+        <option value="16.90">Peixe frito</option>
+    </select> <br><br>
+
+    <button onclick="btn_preco()">Ver preço</button>
+
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+    function btn_preco() {
+        var nome = in_nome.value;
+        var total = Number(select_bebida.value) + Number(select_comida.value);
+
+        display.innerHTML = `Olá, ${nome}. Seu almoço vai custar um total de R$ ${total}`;
+    }
+
+</script>
