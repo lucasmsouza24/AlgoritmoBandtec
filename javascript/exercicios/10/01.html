@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <select id="select_rua_a">
+        <option value="0">Parado</option>
+        <option value="1">Andando</option>
+    </select>
+
+    <select id="select_rua_b">
+        <option value="0">Parado</option>
+        <option value="1">Andando</option>
+    </select>
+
+    <button onclick="simular()">Simular</button>
+    
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+    function simular() {
+        var estado_rua_a = select_rua_a.value; 
+        var estado_rua_b = select_rua_b.value;
+        
+        if(estado_rua_a == "1" && estado_rua_b == "1") {
+            display.innerHTML = "Risco de colisão";
+        } else if (estado_rua_a == "0" && estado_rua_b == "0") {
+            display.innerHTML = "Risco de engarrafamento";
+        } else {
+            display.innerHTML = "Fluxo perfeito";
+        }
+    }
+
+</script>

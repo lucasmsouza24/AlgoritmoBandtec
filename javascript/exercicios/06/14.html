@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+    <style>
+        #lutadores {
+            display: none;
+            margin-bottom: 10px;
+            /* background-color: blue; */
+        }
+        #lutador1 {
+            width: 400px;
+        }
+        #lutador2 {
+            float: right;
+            width: 400px;
+        }
+        .hp {
+            background-color: rgb(73, 221, 73);
+            height: 100px;
+            width: 50%;
+            display: none;
+        }
+        #hp1 {
+            /* width: 50%; */
+            float: left;
+        }
+        #hp2 {
+            /* width: 50%; */
+            float: right;
+        }
+        #legend1_txt {
+            float: left;
+            display: none;
+        }
+        #legend2_txt {
+            float: right;
+            display: none;
+        }
+        #hp-box {
+            width: 100%;
+            display: block;
+            background-color: blue;
+        }
+        .hp {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="start_game()">Iniciar Jogo</button>
+
+    <div id="lutadores">
+        <img id="lutador1" src="./img/14-scorpion.png" onclick="attack_scorpion()">
+        <img id="lutador2" src="./img/14-sub-zero.png" onclick="attack_subzero()">
+    </div>
+
+    <div id="hp-box">
+        <div id="hp1" class="hp"></div>
+        <div id="hp2" class="hp"></div>
+    </div>
+
+    <p id="legend1_txt"> Golpes sofridos pelo lutador 1: <span id="legend1_contador"></span></p>
+    <p id="legend2_txt"> Golpes sofridos pelo lutador 2: <span id="legend2_contador"></span></p>
+</body>
+</html>
+
+<script>
+
+    var hp1_value = 50;
+    var hp2_value = 50;
+    var legend1_contador_value = 0
+    var legend2_contador_value = 0
+    
+    function start_game() {
+        // exibindo imagens
+        lutadores.style.display = "block";
+
+        // exibindo barras de hp
+        hp1.style.display = "block";
+        hp2.style.display = "block";
+
+        // definindo largura das barras de hp
+        hp1.style.width = hp1_value + "%";
+        hp2.style.width = hp2_value + "%";
+
+        // exibindo contador de socos
+        legend1_txt.style.display = "block";
+        legend2_txt.style.display = "block";
+
+    }
+
+    function attack_scorpion() {
+        hp1_value -= 5;
+        hp1.style.width = hp1_value + "%";
+    }
+
+    function attack_subzero() {
+        hp2_value -= 5;
+        hp2.style.width = hp2_value + "%";
+    }
+
+</script>

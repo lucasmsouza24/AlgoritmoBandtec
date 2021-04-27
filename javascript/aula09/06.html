@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Frase:
+    <input id="in_frase" onkeyup="transformacoes()"> <br><br>
+
+    primeira letra
+    <span id="span_first_letter"></span> <br><br>
+
+    última letra
+    <span id="span_last_letter"></span> <br><br>
+
+    tem "@" ?
+    <span id="span_tem_arroba"> Não</span> <br><br>
+
+    começa com a:
+    <span id="span_comeca_correto">Não</span> <br><br>
+
+    termina com .com.br:
+    <span id="span_termina_correto">Não</span>
+</body>
+</html>
+
+<script>
+
+    function transformacoes() {
+        var frase = in_frase.value;
+        span_first_letter.innerHTML = frase[0];
+        span_last_letter.innerHTML = frase[frase.length - 1];
+
+
+        if(frase.indexOf("@") > -1) {
+            span_tem_arroba.innerHTML = "Sim"
+        } else {
+            span_tem_arroba.innerHTML = "Não"
+        }
+
+        if(frase.startsWith("a") == true) {
+            span_comeca_correto.innerHTML = "Sim";
+        } else {
+            span_comeca_correto.innerHTML = "Não";
+        }
+
+        if(frase.endsWith(".com.br") == true) {
+            span_termina_correto.innerHTML = "Sim";
+        } else {
+            span_termina_correto.innerHTML = "Não";
+        }
+
+    }
+
+</script>
