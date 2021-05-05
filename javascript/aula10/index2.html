@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        a) tenha um input (número de repetições)
+        b) caso o valor em a seja maior que 2:
+            n.1) mostra o valor em a) vezes uma frase qualquer;
+        c) caso contrário mostre apenas 1 vez uma frase qualquer (sem usar o while)
+     -->
+
+     <input id="input_num" placeholder="Número de repetições">
+     <br>
+     <button onclick="btnClick()">Click!</button>
+     <div id="display"></div>
+</body>
+</html>
+
+<script>
+    function btnClick() {
+        if (input_num.value >= 2) {
+            var c = 0;
+            while (c < input_num.value) {
+                display.innerHTML += "<p>frase qualquer</p>";
+                c++;
+            }
+        } else {
+            display.innerHTML += "<p>frase qualquer</p>";
+        }
+    }
+</script>

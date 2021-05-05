@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        3. Faça uma versão melhorada do programa anterior no qual:
+        a) O usuário informa a quantidade de vezes que quer que a frase repita
+        b) Se a quantidade não for informada ou se for menor que 0, exiba um alert "Quantidade inválida" e, claro, não exiba a frase na tela
+     -->
+
+     <input id="in_frase" placeholder="Frase filosófica">
+     <br><br>
+     Repetir <input id="in_repeticoes"> vezes.
+     <br><br>
+     <button onclick="filosofar()">Filosofar</button>
+     <br>
+     <div id="display"></div>
+ </body>
+ </html>
+ 
+ <script>
+ 
+     function filosofar() {
+        if(in_frase.value == "") {
+            alert("Mas qual a frase?");
+        } else {
+            var c = 0;
+            while (c < in_repeticoes.value) {
+                display.innerHTML += `<p>${in_frase.value}</p>`;
+                c++;
+            }
+        }
+     }
+
+ </script>

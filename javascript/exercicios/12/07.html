@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        7. Crie um programa em HTML/JS o qual:
+        a) Tenha um botão "Amo o escudo do meu time!"
+        b) Ao clicar nele, mostre na própria página 7 vezes o mesmo escudo de um time de futebol (ou de LoL ou do esporte que quiser)
+     -->
+
+     <button onclick="mostrar_escudo()">Amo o escuto do meu time!</button>
+     <br> <br>
+     <div id="display"></div>
+     
+</body>
+</html>
+
+<script>
+
+    function mostrar_escudo() {
+        var c = 1;
+        while (c <= 7) {
+            display.innerHTML += `<img src="https://i.pinimg.com/564x/16/db/d2/16dbd20fd582e025dc54cc3fbd1839c9.jpg" style="width: 150px;">`;
+            c++;
+        }
+    }
+
+</script>

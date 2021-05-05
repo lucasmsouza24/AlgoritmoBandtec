@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        8. Crie um programa em HTML/JS o qual:
+        a) Pergunte de quantos em quantos dias o usuário faz musculação (é só uma informação, só 1 número, ok?)
+        b) Ao clicar em "Exibir rotina mensal", mostre uma sequência de 30 frases, como neste exemplo:
+            Dia 1 - Musculação
+            Dia 2 - Comer, dormir etc
+            Dia 3 - Comer, dormir etc
+            Dia 4 - Musculação
+            Dia 5 - Comer, dormir etc
+            Dia 6 - Comer, dormir etc
+            Dia 7 - Musculação
+            ...
+            Dia 30 - Comer, dormir etc
+
+        O Dia 1 sempre é de "Musculação"
+        Considere que, nesse exemplo, o usuário informou 3 no item a)
+     -->
+
+     De quantos em quantos dias você faz musculação?
+     <br>
+     <input type="text" id="intervalo">
+     <br><br>
+     <button onclick="rotinaMensal()">Exibir rotina mensal</button>
+     <br><br>
+     <div id="display"></div>
+</body>
+</html>
+
+<script>
+
+    function rotinaMensal() {
+        
+        var dia = 1;
+        var dia_musculacao = 1;
+        var variacao = Number(intervalo.value);
+
+        while (dia <= 30) {
+            var atividade = "Comer, dormir, etc.";
+            if (dia_musculacao == dia){
+                atividade = "<b>Musculação</b>";
+                dia_musculacao += variacao;
+            }
+            display.innerHTML += `<p>Dia ${dia} - ${atividade}</p>`;
+            dia++;
+            console.log(variacao);
+        }
+        
+    }
+
+</script>
