@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    .form {
+        display: none;
+    }
+
+    .notaFiscalItem {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    #divNotaFiscal {
+        color: white;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+    }
+
+    .container {
+        width: 400px;
+        /* border: 1px solid rgb(59, 158, 224); */
+        background-color: rgb(26, 66, 139);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+    .container button, input {
+        /* height: 30px; */
+        font-size: 18px;
+        /* margin-bottom: 20px; */
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+        border-radius: 5px;
+        border-style: none;
+    }
+
+    .container button:focus, .container input:focus {
+        outline: none;
+    }
+
+    .container button {
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .form {
+        width: auto;
+        /* border: 1px red solid; */
+        flex-direction: column;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+    <button onclick="mostrarFormCad()">Cadastrar produtos</button>
+    <button onclick="mostrarFormNovaVenda()">Iniciar nova venda</button>
+
+    <div class="caixa-formulario"> <br><br>
+
+        <!-- Formulário cadastro de produtos -->
+        <div class="form" id="idFormCadProd">
+            <input id="inputCadCodProd" placeholder="Código do produto"> <br><br>
+            <input id="inputCadNomeProd" placeholder="Nome do Produto"> <br><br>
+            <input id="inputCadPrecoUnitario" placeholder="Preco unitario"> <br><br>
+            <input id="inputCadQtdEstoque" placeholder="Quantidade no estoque"> <br><br>
+           
+            <button onclick="salvarProduto()">Salvar Produto</button>
+        </div>
+
+        <!-- Formulário nova venda -->
+        <div class="form" id="idFormNovaVenda">
+            <input id="inputVendaCodProd" placeholder="Código do Produto"> <br><br>
+            <input id="inputQtdVendida" placeholder="Quantidade vendida"> <br><br>
+
+            <button onclick="registrarVenda()">Registrar Venda</button> <br><br>
+            <button onclick="finalizarVenda()">Finalizar Venda</button>
+            
+        </div>
+
+        <div id="divNotaFiscal">
+            <!-- exibição da nota fiscal -->
+        </div>
+
+    </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+
+
+// exibe formulario de "cadastro de produtos" e esconde formulário de "nova venda"
+function mostrarFormCad() {
+    idFormNovaVenda.style.display = "none";
+    idFormCadProd.style.display = "flex";
+
+    divNotaFiscal.style.display = "none";
+    divNotaFiscal.innerHTML = "";
+    
+}
+
+// exibe formulario de "Nova Venda" e esconde formulário de "Cadastro de Produtos" 
+function mostrarFormNovaVenda() {
+    idFormCadProd.style.display = "none";
+    idFormNovaVenda.style.display = "flex";
+
+    divNotaFiscal.style.display = "block"
+    divNotaFiscal.innerHTML = "";
+}
+
+// vetores de informações dos produtos
+let produtosCod = []
+let produtosNome = []
+let produtosPrecoUnitario = []
+let produtosQtdEstoque = []
+
+// vetores de informações das vendas
+let vendasNome = [];
+let vendasValorUnitario = [];
+let vendasUnidadesVendidas = [];
+
+// salvando dados do produto nos vetores
+function salvarProduto() {
+    let produtoCod = inputCadCodProd.value;
+    let produtoNome = inputCadNomeProd.value;
+    let produtoPrecoUnitario = Number(inputCadPrecoUnitario.value);
+    let produtoQtdEstoque = Number(inputCadQtdEstoque.value);
+
+    if (produtoCod == "" || produtoNome == "" || produtoPrecoUnitario == 0) {
+        alert("Preencha todos os campos")
+
+        // console.log(produtoCod)
+        // console.log(produtoNome)
+        // console.log(produtoPrecoUnitario)
+        // console.log(produtoQtdEstoque)
+    } else if (produtosCod.indexOf(produtoCod) != -1) {
+        alert("Código já existe");
+    } else {    
+        produtosCod.push(produtoCod);
+        produtosNome.push(produtoNome);
+        produtosPrecoUnitario.push(produtoPrecoUnitario);
+        produtosQtdEstoque.push(produtoQtdEstoque);
+
+        alert("Produto cadastrado com sucesso")
+
+        // console.log(produtosCod)
+        // console.log(produtosNome)
+        // console.log(produtosPrecoUnitario)
+        // console.log(produtosQtdEstoque)
+
+        // limpando campos inputs
+        inputCadCodProd.value = ""
+        inputCadNomeProd.value = ""
+        inputCadPrecoUnitario.value = ""
+        inputCadQtdEstoque.value = ""
+    }
+}
+
+// Registrando venda
+function registrarVenda() {
+    // Armazenando código digitado
+    let inputCod = inputVendaCodProd.value;
+    let qtdVendida = Number(inputQtdVendida.value);
+
+    // verificando se produto equivalente ao código existe
+    if(produtosCod.indexOf(inputCod) != -1) {
+        // produto encontrado
+        let index = produtosCod.indexOf(inputCod);
+        
+        // verificando se o possui produtos suficientes no estoque para a venda
+        if(qtdVendida <= produtosQtdEstoque[index]) {
+            // Registrando venda
+            vendasNome.push(produtosNome[index])
+            vendasValorUnitario.push(produtosPrecoUnitario[index])
+            vendasUnidadesVendidas.push(qtdVendida)
+            produtosQtdEstoque[index] -= qtdVendida
+
+            // limpando inputs
+            inputVendaCodProd.value = ""
+            inputQtdVendida.value = ""
+
+            // console.log(vendasNome)
+            // console.log(vendasValorUnitario)
+            // console.log(vendasUnidadesVendidas)
+            // console.log("estoque: ", produtosQtdEstoque)
+        } else {
+            // Quantidade insuficiente
+            alert("Quantidade insuficiente em estoque");
+        }
+    } else {
+        // produto não encontrado
+        alert("produto não encontrado")
+    }
+}
+
+function finalizarVenda() {
+    divNotaFiscal.innerHTML = `<p>Total de vendas: ${vendasNome.length}</p>`
+
+    for(let i = 0; i < vendasNome.length; i++) {
+        let posicao = i + 1;
+        let nomeProduto = vendasNome[i];
+        let valUnitario = vendasValorUnitario[i]
+        let unidadesVendidas = vendasUnidadesVendidas[i]
+        let subtotal = valUnitario * unidadesVendidas
+
+        divNotaFiscal.innerHTML += `
+        <div class="notaFiscalItem">
+            <p>Produto ${posicao}: ${nomeProduto}</p>    
+            <p>Valor Unitário: R$ ${valUnitario.toFixed(2)}</p>    
+            <p>Unidades Vendidas: ${unidadesVendidas}</p>    
+            <p>Subtotal: R$ ${subtotal.toFixed(2)}</p>    
+        </div>
+        `
+    }
+
+    vendasNome = []
+    vendasUnidadesVendidas = []
+    vendasValorUnitario = []
+    // console.log(vendasNome, vendasUnidadesVendidas, vendasValorUnitario)
+}
+
+</script>
